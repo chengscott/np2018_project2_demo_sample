@@ -10,25 +10,26 @@
 
    - yourNpServer takes in 1 argument, which is the port number.
 
-   ```
+```
    ./yourNpServer 12345
-   ```
+```
 
-   - There will be a user_pipe/ directory inside the working directory. For concurrent connection-oriented paradigm with shared memory, user pipes (you can use regular files for user pipes) should be saved inside yourWorkingDir/user_pipe/
+- There will be a user_pipe/ directory inside the working directory. For concurrent connection-oriented paradigm with shared memory, user pipes (you can use regular files for user pipes) should be saved inside yourWorkingDir/user_pipe/
 
-   - The initial working directory structure:
+- The initial working directory structure:
 
-   ```
+```
    work_dir
        |-bin
        |-test.html
        |-user_pipe
-   ```
+```
 
 4. We recommand you use <b>telnet</b> during delopment.
    - Assume you run your server on nplinux2 listening to port 12345
    - Run the following telnet commnad on any computer
-   ```
+
+```
    bash$ telnet nplinux2.cs.nctu.edu.tw 12345
    Trying 140.113.235.217...
    Connected to nplinux2.cs.nctu.edu.tw.
@@ -38,7 +39,7 @@
    ****************************************
    *** User '(no name)' entered from CGILAB/511. ***
    %
-   ```
+```
 
 ---
 
@@ -107,11 +108,14 @@ bash$ ./server.sh ../../0756000_np_project2/mySingleProcessConcurrentServer
 - I am now inside np_project2_demo_sameple/client
 
 1. Testing one testcase and save the output in myOutput1.txt
-   ```
+
+```
    ./delayclient nplinux2.cs.nctu.edu.tw 12345 test_case/1.txt > myOutput1.txt
-   ```
+```
+
 2. Testing all testcases
-   ```
+
+```
    ./demo.sh nplinux2.cs.nctu.edu.tw 12345
    ===== Test case 1 =====
    Your answer is correct
@@ -130,4 +134,4 @@ bash$ ./server.sh ../../0756000_np_project2/mySingleProcessConcurrentServer
    ======= Summary =======
    [Correct]: 1 2 3 4 5 6
    [ Wrong ]: 7
-   ```
+```
