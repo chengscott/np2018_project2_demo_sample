@@ -111,7 +111,15 @@ bash$ ./server.sh ../../0756000_np_project2/mySingleProcessConcurrentServer
 ```
 
 - After all demo finishes, before shutting down your server, use zombie.sh to test zombie processes
+```
+./zombie.sh
+Good Job!
+```
 - Shut down your server, then user shm.sh to see if you left shared memory in the system.
+```
+./shm.sh
+Good Job!
+```
 
 ### On another computer
 
