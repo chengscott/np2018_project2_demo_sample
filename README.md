@@ -64,6 +64,14 @@
     2. Use diff to compare the files inside output/ and answer/
     3. Show the result of demo
 
+- zombie.sh:
+  - Check if your server left any zombie processes in the system
+  - Run this script right before you shut down your server
+
+- shm.sh:
+  - Check if your server left shared memory in the system
+  - Run this script after you shut down your server
+
 - src/
   - Contains source code of commands (noop, removetag...) and test.html
 
@@ -101,6 +109,9 @@
 bash$ ./server.sh ../../0756000_np_project2/mySingleProcessConcurrentServer
 ======= Your server is running =======
 ```
+
+- After all demo finishes, before shutting down your server, use zombie.sh to test zombie processes
+- Shut down your server, then user shm.sh to see if you left shared memory in the system.
 
 ### On another computer
 
