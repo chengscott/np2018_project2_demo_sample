@@ -14,7 +14,8 @@ TEST_CASE_START=1
 [ -n "$3" ] && TEST_CASE_START=$3
 
 mkdir -p output
-make
+gmake clean
+gmake
 
 for i in $( seq ${TEST_CASE_START} 7 ); do
   echo "[1;34m===== Test case ${i} =====[m"
