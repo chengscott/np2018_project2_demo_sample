@@ -49,7 +49,7 @@
 
 - server.sh
 
-  - Usage.sh: `./server.sh <server_path>`<port>
+  - Usage.sh: `./server.sh <server_path> <port>`
   - server.sh does the following:
     1. Contruct the working directory (work_template and work_dir)
     2. Compile the commands (noop, removetag...) and place them into bin/ inside the working directory
