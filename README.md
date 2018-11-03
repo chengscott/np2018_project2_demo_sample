@@ -14,9 +14,9 @@
    ./yourNpServer 12345
 ```
 
-    - There will be a user_pipe/ directory inside the working directory. For concurrent connection-oriented paradigm with shared memory, user pipes (you can use regular files for user pipes) should be saved inside yourWorkingDir/user_pipe/
+- There will be a user_pipe/ directory inside the working directory. For concurrent connection-oriented paradigm with shared memory, user pipes (you can use regular files for user pipes) should be saved inside yourWorkingDir/user_pipe/
 
-    - The initial working directory structure:
+- The initial working directory structure:
 
 ```
    work_dir
