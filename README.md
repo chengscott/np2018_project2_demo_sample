@@ -48,21 +48,12 @@
 ### Server
 
 - server.sh
-
   - Usage.sh: `./server.sh <server_path> <port>`
   - server.sh does the following:
     1. Contruct the working directory (work_template and work_dir)
     2. Compile the commands (noop, removetag...) and place them into bin/ inside the working directory
     3. Copy cat and ls into bin/ inside the working directory
     4. Run the your server inside work_dir
-
-- demo.sh:
-
-  - Usage: `./demo.sh <server ip> <port>`
-  - demo.sh does the following:
-    1. Test all testcases using delayclient
-    2. Use diff to compare the files inside output/ and answer/
-    3. Show the result of demo
 
 - zombie.sh:
   - Check if your server left any zombie processes in the system
@@ -77,7 +68,21 @@
 
 ### Client
 
-- client/src/delayclient.c
+- There are two directories inside client: single_client & multi_client
+
+  - Use single_client to test the first server (npserver_simple)
+  - Use multi_client to test the other two servers (npserver_single_proc & npserver_multi_proc)
+
+- demo.sh:
+
+  - Usage: `./demo.sh <server ip> <port>`
+  - demo.sh does the following:
+    1. Test all testcases using delayclient
+    2. Use diff to compare the files inside output/ and answer/
+    3. Show the result of demo
+
+
+- delayclient.c
 
   - You can compile this code using makefile
   - Usage: `./delayclient <server ip> <port> <testfile>`
@@ -106,7 +111,7 @@
 - I am now inside np_project2_demo_sample/server/
 
 ```
-bash$ ./server.sh ../../0756000_np_project2/mySingleProcessConcurrentServer
+bash$ ./server.sh ../../0756000_np_project2/npserver_single_proc 12345
 ======= Your server is running =======
 ```
 
@@ -124,7 +129,7 @@ Good Job!
 ### On another computer
 
 - Assume you also cloned np_project2_demo_sample onto this computer
-- I am now inside np_project2_demo_sameple/client
+- I am now inside np_project2_demo_sameple/client/multi_client/
 
 1. Testing one testcase and save the output in myOutput1.txt
 
