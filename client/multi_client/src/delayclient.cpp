@@ -28,7 +28,7 @@ int contain_prompt ( char* line )
 
 int recv_msg(int userno,int from)
 {
-  char buf[3000],*tmp;
+  char buf[30000],*tmp;
   int len/*,i*/;
   
   len=read(from,buf,sizeof(buf)-1);
@@ -74,7 +74,7 @@ int readline(int fd,char *ptr,int maxlen)
 int main(int argc,char *argv[])
 {
   fd_set              rfds, afds;
-  char                /*buf[3000],*/ msg_buf[3000], msg_buf1[3000];
+  char                /*buf[3000],*/ msg_buf[30000], msg_buf1[30000];
   int                 unsend, len, SERVER_PORT, i;
   int                 client_fd[MAXUSER];
   struct sockaddr_in  client_sin;

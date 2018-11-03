@@ -3,6 +3,9 @@
 CLIENT="./delayclient"
 SERVER_IP=$1
 SERVER_PORT=$2
+OUTPUT_DIR="output"
+TESTCASE_DIR="test_case"
+ANSWER_DIR="answer"
 
 if [ -z ${SERVER_IP} ] || [ -z ${SERVER_PORT} ]; then
   echo "Usage: $0 [server IP] [server port]"
@@ -13,15 +16,15 @@ TEST_CASE_START=1
 
 [ -n "$3" ] && TEST_CASE_START=$3
 
-mkdir -p output
+mkdir -p ${OUTPUT_DIR}
 gmake clean
 gmake
 
 for i in $( seq ${TEST_CASE_START} 7 ); do
   echo "[1;34m===== Test case ${i} =====[m"
-  rm -f output/${i}.txt
-  ${CLIENT} ${SERVER_IP} ${SERVER_PORT} test_case/${i}.txt > output/${i}.txt
-  diff -w output/${i}.txt answer/${i}.txt > /dev/null
+  rm -f ${OUTPUT_DIR}/${i}.txt
+  ${CLIENT} ${SERVER_IP} ${SERVER_PORT} ${TESTCASE_DIR}/${i}.txt > ${OUTPUT_DIR}/${i}.txt
+  diff -w ${OUTPUT_DIR}/${i}.txt ${ANSWER_DIR}/${i}.txt > /dev/null
   if [ $? -eq 0 ]; then
     echo "Your answer is [0;32mcorrect[m"
     correct_cases="${correct_cases} ${i}"
