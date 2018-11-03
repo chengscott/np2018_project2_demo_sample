@@ -8,15 +8,15 @@
 
 3. Please make your servers fit the requirements:
 
-   - yourNpServer takes in 1 argument, which is the port number.
+    - yourNpServer takes in 1 argument, which is the port number.
 
 ```
    ./yourNpServer 12345
 ```
 
-- There will be a user_pipe/ directory inside the working directory. For concurrent connection-oriented paradigm with shared memory, user pipes (you can use regular files for user pipes) should be saved inside yourWorkingDir/user_pipe/
+    - There will be a user_pipe/ directory inside the working directory. For concurrent connection-oriented paradigm with shared memory, user pipes (you can use regular files for user pipes) should be saved inside yourWorkingDir/user_pipe/
 
-- The initial working directory structure:
+    - The initial working directory structure:
 
 ```
    work_dir
@@ -27,8 +27,8 @@
 
 4. We recommand you use telnet during delopment.
 
-   - Assume you run your server on nplinux2 listening to port 12345
-   - Run the following telnet commnad on any computer
+    - Assume you run your server on nplinux2 listening to port 12345
+    - Run the following telnet commnad on any computer
 
 ```
    bash$ telnet nplinux2.cs.nctu.edu.tw 12345
@@ -49,59 +49,63 @@
 ### Server
 
 - server.sh
-  - Usage.sh: `./server.sh <server_path> <port>`
-  - server.sh does the following:
-    1. Contruct the working directory (work_template and work_dir)
-    2. Compile the commands (noop, removetag...) and place them into bin/ inside the working directory
-    3. Copy cat and ls into bin/ inside the working directory
-    4. Run the your server inside work_dir
+
+    - Usage.sh: `./server.sh <server_path> <port>`
+    - server.sh does the following:
+      1. Contruct the working directory (work_template and work_dir)
+      2. Compile the commands (noop, removetag...) and place them into bin/ inside the working directory
+      3. Copy cat and ls into bin/ inside the working directory
+      4. Run the your server inside work_dir
 
 - zombie.sh:
-  - Check if your server left any zombie processes in the system
-  - Run this script right before you shut down your server
+
+    - Check if your server left any zombie processes in the system
+    - Run this script right before you shut down your server
 
 - shm.sh:
-  - Check if your server left shared memory in the system
-  - Run this script after you shut down your server
+
+    - Check if your server left shared memory in the system
+    - Run this script after you shut down your server
 
 - src/
-  - Contains source code of commands (noop, removetag...) and test.html
+
+    - Contains source code of commands (noop, removetag...) and test.html
 
 ### Client
 
 - There are two directories inside client: single_client & multi_client
 
-  - Use single_client to test the first server (npserver_simple)
-  - Use multi_client to test the other two servers (npserver_single_proc & npserver_multi_proc)
+    - Use single_client to test the first server (npserver_simple)
+    - Use multi_client to test the other two servers (npserver_single_proc & npserver_multi_proc)
 
 - demo.sh:
 
-  - Usage: `./demo.sh <server ip> <port>`
-  - demo.sh does the following:
-    1. Test all testcases using delayclient
-    2. Use diff to compare the files inside output/ and answer/
-    3. Show the result of demo
+    - Usage: `./demo.sh <server ip> <port>`
+    - demo.sh does the following:
+      1. Test all testcases using delayclient
+      2. Use diff to compare the files inside output/ and answer/
+      3. Show the result of demo
 
 
 - delayclient.c
 
-  - You can compile this code using makefile
-  - Usage: `./delayclient <server ip> <port> <testfile>`
-  - The delayclient reads a specific format of input, please reder to the files under test_case/ for example
-  - The delayclient acts as many clients, it will read the testfile and send commands using differenct sockets, protending that there are many clients logging onto to the server.
+    - You can compile this code using makefile
+    - Usage: `./delayclient <server ip> <port> <testfile>`
+    - The delayclient reads a specific format of input, please reder to the files under test_case/ for example
+    - The delayclient acts as many clients, it will read the testfile and send commands using differenct sockets, protending that there are many clients logging onto to the server.
 
 - compare.sh
 
-  - Usage: `./compare.sh [n]`
-  - Compare.sh will run vimdiff on the n'th answer and your output
+    - Usage: `./compare.sh [n]`
+    - Compare.sh will run vimdiff on the n'th answer and your output
 
 - test_case/
 
-  - Contains test cases
+    - Contains test cases
 
 - answer/
 
-  - Contains answers
+    - Contains answers
 
 ## Scenario
 
