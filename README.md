@@ -25,7 +25,7 @@
        |-user_pipe
 ```
 
-4. We recommand you use <b>telnet</b> during delopment.
+4. We recommand you use telnet during delopment.
    - Assume you run your server on nplinux2 listening to port 12345
    - Run the following telnet commnad on any computer
 
