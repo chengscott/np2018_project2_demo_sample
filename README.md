@@ -16,19 +16,19 @@
 
    - The initial working directory structure:
 
-    ```
-        work_dir
-            |-bin
-            |-test.html
-            |-user_pipe
-    ```
+```
+    work_dir
+        |-bin
+        |-test.html
+        |-user_pipe
+```
 
 4. We recommand you use telnet during delopment.
 
     - Assume you run your server on nplinux2 listening to port 12345
     - Run the following telnet commnad on any computer
 
-    ```
+```
     bash$ telnet nplinux2.cs.nctu.edu.tw 12345
     Trying 140.113.235.217...
     Connected to nplinux2.cs.nctu.edu.tw.
@@ -38,7 +38,7 @@
     ****************************************
     *** User '(no name)' entered from CGILAB/511. ***
     %
-    ```
+```
     
 5. Please be aware that the line sent from telnet and our delayclient might end with "\r\n".
 
