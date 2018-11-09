@@ -44,7 +44,7 @@
 
 6. The output order of the command "ls" might be different, we will try to avoid this situation during demo.
 
-7. To make it easier to demo, you can print IP/Port as CGILAB/511 for the command "who". However, you still need to know how to retrieve the ip and port.
+7. To make it easier to demo, you can print IP/Port as CGILAB/511 for the command "who". However, you still need to know how to retrieve the ip and port of each client.
 
 ---
 
