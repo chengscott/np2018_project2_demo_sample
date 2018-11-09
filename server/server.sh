@@ -17,7 +17,10 @@ fi
 
 SERVER_PATH=$( readlink -f ${SERVER_PATH} )
 
-gmake
+[ -n "$( which gmake )" ] && MAKE=gmake
+[ -z "$( which gmake )" ] && MAKE=make
+${MAKE}
+
 cd work_dir
 echo "[1;34m======= Your server is running =======[m"
 ${SERVER_PATH} ${SERVER_PORT}
